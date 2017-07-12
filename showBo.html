@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<!--弹出层的样式以及JS-->
+		<link rel="stylesheet" href="showBo.css" />
+		<script type="text/javascript" src="showBo.js" ></script>
+		<!--弹出层的样式以及JS-->
+ 		<style>
+ 			.qiuyan{
+ 				border: none;
+ 				background-color: #CC0000;
+ 				color: white;
+ 				text-align: center;
+ 				font-size: 18px;
+ 				height: 34px;
+ 				width: 80px;
+ 				margin: 10px auto;
+ 				display: block;
+ 				position: relative;
+ 			}
+ 		</style>
+	</head>
+
+	<body>
+		<button id="aa" class="qiuyan">aa</button><br />
+		<button id="bb" class="qiuyan">bb</button><br />
+		<button id="cc" class="qiuyan">cc</button>
+		<script>
+			$(function(){
+				$("#aa").click(function(){
+					Showbo.Msg.confirm('请上传图片', '温馨提示', '确定','取消',function(flag){
+						if(flag =="yes"){
+							return false;
+						}
+				})
+					})
+				$("#bb").click(function(){
+					Showbo.Msg.alert('请上传图片!', '温馨提示', '确定', 1e5)
+					})
+				$("#cc").click(function(){
+					Showbo.Msg.alert('请上传图片', '温馨提示', '确定', 1e5);
+				})
+			 })
+		</script>
+		 
+	</body>
+
+</html>
